@@ -24,6 +24,7 @@ This endpoint accepts two ways of generating a PDF: you can either send HTML tex
 When choosing to upload a file, make sure that the file is sent in the `multipart/form-data` entry called `file`.
 
 **Sending HTML text as the request body via cURL:** `curl -H "Content-Type: text/html" -d "<h1>your html goes here</h1>" http://html-to-pdf/generate`
+
 **Uploading an HTML file via cURL:** `curl -F "file=@/your/html/file/goes/here.html" http://html-to-pdf/generate`
 
 ##### 400 Bad Request
