@@ -1,3 +1,8 @@
+"""
+This is currently unused, but can be used in the future to facilitate
+communication between this microservice and others via the db instead of
+directly
+"""
 from string import Template
 
 from escape_helpers import sparql_escape_uri, sparql_escape_string, sparql_escape_int, sparql_escape_datetime

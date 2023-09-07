@@ -21,7 +21,7 @@ def generate_pdf_from_html():
     elif mimetype == 'multipart/form-data':
         if "file" not in request.files:
             return error(
-                f"multipart/form-data MIME type was provided but no 'file' " \
+                "multipart/form-data MIME type was provided but no 'file' " \
                 "entry was provided. The 'file' entry should contain the " \
                 "uploaded file.",
                 400
@@ -32,7 +32,7 @@ def generate_pdf_from_html():
             html_string = html_file.read()
         else:
             return error(
-                f"multipart/form-data MIME type was provided but the 'file' " \
+                "multipart/form-data MIME type was provided but the 'file' " \
                 "entry was empty.",
                 400
             )
@@ -44,7 +44,6 @@ def generate_pdf_from_html():
             415
         )
 
-    print(html_string, flush=True)
     pdf_bytes = generate_pdf(html_string)
     return send_file(
         io.BytesIO(pdf_bytes),
